@@ -4,7 +4,7 @@ import AuthInfo from "../../Hooks/AuthInfo";
 import Swal from "sweetalert2";
 
 const Register = () => {
-  const { createUser } = AuthInfo();
+  const { createUser, updateUser, setUser } = AuthInfo();
   const { state } = useLocation();
   const navigate = useNavigate();
   const handleSignUp = (e) => {
@@ -15,8 +15,17 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     createUser(email, password)
-      .then((result) => {
-        console.log(result);
+      .then((userCredential) => {
+        const newUser = userCredential.user;
+
+        // update user profile
+
+        updateUser({ displayName: name, photoURL: photo });
+          })
+          .catch((error) => {
+            console.log(error.message);
+          });
+
         Swal.fire({
           position: "top-end",
           icon: "success",

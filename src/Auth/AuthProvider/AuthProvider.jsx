@@ -6,6 +6,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../../Firebase/Firebase.config";
 
@@ -28,6 +29,13 @@ const AuthProvider = ({ children }) => {
   //   continue with google
   const continueWithGoogle = () => {
     return signInWithPopup(auth, provider);
+  };
+
+  //   updateUser profile
+
+  const updateUser = (moreInfo) => {
+    return updateProfile(auth.currentUser, moreInfo)
+      
   };
 
   // set  observer for
@@ -53,6 +61,7 @@ const AuthProvider = ({ children }) => {
     loading,
     setLoading,
     continueWithGoogle,
+    updateUser
   };
   return (
     <AuthContext.Provider value={authData}>{children}</AuthContext.Provider>
