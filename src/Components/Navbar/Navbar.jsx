@@ -1,9 +1,10 @@
 import React from "react";
 import { Link, NavLink } from "react-router";
+import navLogo from '../../assets/navLogo.png'
 
 const Navbar = () => {
   const links = (
-    <ul className="space-x-4">
+    <ul className="space-x-4 text-white">
       <NavLink to="/">Home</NavLink>
       <NavLink to="/all-packages">All Packages</NavLink>
       <NavLink to="/About-Us">About Us</NavLink>
@@ -11,7 +12,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar flex justify-between bg-base-100 shadow-sm">
+    <div className="navbar flex justify-between bg-primary shadow-sm">
       <div className="navbar-start w-fit">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -37,18 +38,21 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <p>Tour</p>
+        <div className="flex items-center">
+            <img src={navLogo} className="w-32 " alt="" />
+            <p className="text-secondary font-bold text-3xl">Trip<span className="text-accent">Ease</span></p>
+        </div>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
 
-      <div className="flex justify-end ">
+      <div className="flex justify-end space-x-2">
         <Link to={"/login"}>
-          <button className="btn bg-red-500 text-white ">Login</button>
+          <button className="btn bg-secondary text-white border-accent ">Login</button>
         </Link>
         <Link to={"/register"}>
-          <button className="btn  bg-red-500 text-white ">Register</button>
+          <button className="btn  bg-secondary text-white border-accent">Register</button>
         </Link>
       </div>
     </div>
