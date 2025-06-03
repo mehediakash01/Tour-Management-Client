@@ -20,7 +20,9 @@ const Register = () => {
 
         // update user profile
 
-        updateUser({ displayName: name, photoURL: photo });
+        updateUser({ displayName: name, photoURL: photo })
+          .then(() => {
+            setUser({ ...newUser, displayName: name, photoURL: photo });
           })
           .catch((error) => {
             console.log(error.message);
