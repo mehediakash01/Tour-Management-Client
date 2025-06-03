@@ -1,7 +1,10 @@
 import { Link } from "react-router";
 import SocialButton from "./SocialButton";
+import AuthInfo from "../../Hooks/AuthInfo";
+import Swal from "sweetalert2";
 
 const Register = () => {
+  const { createUser } = AuthInfo();
   const handleSignUp = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -9,6 +12,25 @@ const Register = () => {
     const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
+    createUser(email, password)
+      .then((result) => {
+        console.log(result);
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Register Successful!",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      })
+      .catch((err) => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `${err.message} || something went wrong`,
+          
+        });
+      });
   };
 
   return (

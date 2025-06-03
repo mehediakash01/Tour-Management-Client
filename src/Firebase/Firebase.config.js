@@ -1,5 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { meta } from "@eslint/js";
+import { getAuth } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -16,3 +17,4 @@ appId:import.meta.env.VITE_appId,
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
