@@ -6,9 +6,11 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
+  signOut,
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../../Firebase/Firebase.config";
+import Swal from "sweetalert2";
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -34,8 +36,27 @@ const AuthProvider = ({ children }) => {
   //   updateUser profile
 
   const updateUser = (moreInfo) => {
-    return updateProfile(auth.currentUser, moreInfo)
-      
+    return updateProfile(auth.currentUser, moreInfo);
+  };
+  //   logoutUser
+  const logoutUser = () => {
+    return signOut(auth)
+      .then(() => {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "sign out  Successful!",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      })
+      .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `${error.message} || something went wrong`,
+        });
+      });
   };
 
   // set  observer for
@@ -61,7 +82,8 @@ const AuthProvider = ({ children }) => {
     loading,
     setLoading,
     continueWithGoogle,
-    updateUser
+    updateUser,
+    logoutUser,
   };
   return (
     <AuthContext.Provider value={authData}>{children}</AuthContext.Provider>
