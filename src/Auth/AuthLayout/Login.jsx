@@ -1,10 +1,12 @@
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import SocialButton from "./SocialButton";
 import AuthInfo from "../../Hooks/AuthInfo";
 import Swal from "sweetalert2";
 
 const Login = () => {
   const { loginUser } = AuthInfo();
+  const { state } = useLocation();
+  const navigate = useNavigate();
   const handleSignIn = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -13,7 +15,6 @@ const Login = () => {
     const password = form.password.value;
     loginUser(email, password)
       .then((result) => {
-        console.log(result);
         Swal.fire({
           position: "top-end",
           icon: "success",
@@ -21,6 +22,7 @@ const Login = () => {
           showConfirmButton: false,
           timer: 1500,
         });
+        navigate(state || "/", { replace: true });
       })
       .catch((err) => {
         Swal.fire({

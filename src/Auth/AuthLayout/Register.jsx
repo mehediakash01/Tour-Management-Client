@@ -1,10 +1,12 @@
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import SocialButton from "./SocialButton";
 import AuthInfo from "../../Hooks/AuthInfo";
 import Swal from "sweetalert2";
 
 const Register = () => {
   const { createUser } = AuthInfo();
+  const { state } = useLocation();
+  const navigate = useNavigate();
   const handleSignUp = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -22,13 +24,13 @@ const Register = () => {
           showConfirmButton: false,
           timer: 1500,
         });
+        navigate(state || "/", { replace: true });
       })
       .catch((err) => {
         Swal.fire({
           icon: "error",
           title: "Oops...",
           text: `${err.message} || something went wrong`,
-          
         });
       });
   };
