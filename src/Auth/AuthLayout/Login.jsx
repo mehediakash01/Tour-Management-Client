@@ -1,13 +1,34 @@
 import { Link } from "react-router";
 import SocialButton from "./SocialButton";
+import AuthInfo from "../../Hooks/AuthInfo";
+import Swal from "sweetalert2";
 
 const Login = () => {
+  const { loginUser } = AuthInfo();
   const handleSignIn = (e) => {
     e.preventDefault();
     const form = e.target;
 
     const email = form.email.value;
     const password = form.password.value;
+    loginUser(email, password)
+      .then((result) => {
+        console.log(result);
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Register Successful!",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      })
+      .catch((err) => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `${err.message} || something went wrong`,
+        });
+      });
   };
 
   return (
