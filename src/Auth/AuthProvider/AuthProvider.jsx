@@ -42,6 +42,8 @@ const AuthProvider = ({ children }) => {
   const logoutUser = () => {
     return signOut(auth)
       .then(() => {
+        setUser(null);
+        setLoading(false);
         Swal.fire({
           position: "top-end",
           icon: "success",

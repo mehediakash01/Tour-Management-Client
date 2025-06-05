@@ -1,13 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, NavLink } from "react-router";
-import navLogo from '../../assets/navLogo.png'
+import navLogo from "../../assets/navLogo.png";
+import AuthInfo from "../../Hooks/AuthInfo";
 
 const Navbar = () => {
+  const [isClicked,setIsClicked] = useState(false);
+  const { user, logoutUser } = AuthInfo();
+  console.log(user);
+ 
   const links = (
     <ul className="space-x-4 text-white">
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/all-packages">All Packages</NavLink>
-      <NavLink to="/About-Us">About Us</NavLink>
+      {user ? (
+        <>
+          {" "}
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/all-packages">All Packages</NavLink>
+          <NavLink to="/my-bookings">My Bookings</NavLink>
+          <NavLink to="/About-Us">About Us</NavLink>
+        </>
+      ) : (
+        <>
+          {" "}
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/all-packages">All Packages</NavLink>
+          <NavLink to="/About-Us">About Us</NavLink>
+        </>
+      )}
     </ul>
   );
 
@@ -39,22 +57,44 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex items-center">
-            <img src={navLogo} className="w-32 " alt="" />
-            <p className="text-secondary font-bold text-3xl">Trip<span className="text-accent">Ease</span></p>
+          <img src={navLogo} className="w-32 " alt="" />
+          <p className="text-secondary font-bold text-3xl">
+            Trip<span className="text-accent">Ease</span>
+          </p>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
-
-      <div className="flex justify-end space-x-2">
-        <Link to={"/login"}>
-          <button className="btn bg-secondary text-white border-accent ">Login</button>
-        </Link>
-        <Link to={"/register"}>
-          <button className="btn  bg-secondary text-white border-accent">Register</button>
-        </Link>
-      </div>
+      {user ? (
+        <div className=" relative">
+          <div onClick={()=>setIsClicked(!isClicked)} className=" rounded-full">
+        
+            <img className="w-12 h-12 rounded-full ring-1  ring-secondary" src={user.photoURL} alt="" />
+           
+          </div>
+           {
+              isClicked&& <div className="bg-accent -ml-24 absolute p-3 rounded-md transition-all ease-in-out mt-4 flex flex-col gap-1  ">
+              <Link to={'/addPackage'} className="text-white hover:bg-secondary hover:p-1 hover:rounded-md transition-all ease-in-out ">Add Package </Link> 
+              <Link to={'/managePackage'} className="text-white hover:bg-secondary hover:p-1 hover:rounded-md transition-all ease-in-out ">Manage My Packages  </Link>
+              <button onClick={()=> logoutUser()} className="bg-secondary hover:bg-emerald-600  transition-all ease-in-out btn border-none text-white">log-out</button>
+              </div>
+            }
+        </div>
+      ) : (
+        <div className="flex justify-end space-x-2">
+          <Link to={"/login"}>
+            <button className="btn bg-secondary text-white  ">
+              Login
+            </button>
+          </Link>
+          <Link to={"/register"}>
+            <button className="btn  bg-secondary text-white ">
+              Register
+            </button>
+          </Link>
+        </div>
+      )}
     </div>
   );
 };

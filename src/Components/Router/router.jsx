@@ -4,11 +4,13 @@ import Home from "../../Pages/Home/Home";
 import Login from "../../Auth/AuthLayout/Login";
 import Register from "../../Auth/AuthLayout/Register";
 import ErrorPage from "../../Pages/Error/ErrorPage";
+import PrivateRoute from "./PrivateRoute";
+import MyBookings from "../MyBookings/MyBookings";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    errorElement:<ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     Component: Root,
     children: [
       { index: true, Component: Home },
@@ -19,6 +21,14 @@ export const router = createBrowserRouter([
       {
         path: "register",
         Component: Register,
+      },
+      {
+        path: "my-bookings",
+        element: (
+          <PrivateRoute>
+            <MyBookings></MyBookings>
+          </PrivateRoute>
+        ),
       },
     ],
   },
