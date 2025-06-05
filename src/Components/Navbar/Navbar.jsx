@@ -6,7 +6,7 @@ import AuthInfo from "../../Hooks/AuthInfo";
 const Navbar = () => {
   const [isClicked,setIsClicked] = useState(false);
   const { user, logoutUser } = AuthInfo();
-  console.log(user);
+
  
   const links = (
     <ul className="space-x-4 text-white">
@@ -57,7 +57,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex items-center">
-          <img src={navLogo} className="w-32 " alt="" />
+          <img src={navLogo} className="w-12 h-12 " alt="" />
           <p className="text-secondary font-bold text-3xl">
             Trip<span className="text-accent">Ease</span>
           </p>

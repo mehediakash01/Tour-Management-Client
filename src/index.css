@@ -9,3 +9,7 @@
   --color-secondary: #1ABC9C;
   --color-accent: #F39C12;
 }
+
+.active{
+  @apply  text-secondary
+}
