@@ -11,6 +11,7 @@ import PackageDetails from "../../Pages/PackageDetails/PackageDetails";
 import AboutUs from "../../Pages/AboutUs/AboutUs";
 import AddPackage from "../../Pages/AddPackage/AddPackage";
 import ManagePackage from "../../Pages/ManagePackage/ManagePackage";
+import UpdatePackage from "../../Pages/ManagePackage/UpdatePackage";
 
 export const router = createBrowserRouter([
   {
@@ -69,7 +70,12 @@ export const router = createBrowserRouter([
       {
         path:'about-us',
         Component: AboutUs
-      }
+      },
+      {
+        path:'update/:id',
+        loader: ({params})=>fetch(`http://localhost:3000/allPackage/${params.id}`),
+        Component: UpdatePackage
+      },
     ],
   },
 ]);
