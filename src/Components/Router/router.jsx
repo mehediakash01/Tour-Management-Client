@@ -8,6 +8,7 @@ import PrivateRoute from "./PrivateRoute";
 import MyBookings from "../MyBookings/MyBookings";
 import AllPackage from "../../Pages/AllPackage/AllPackage";
 import PackageDetails from "../../Pages/PackageDetails/PackageDetails";
+import AboutUs from "../../Pages/AboutUs/AboutUs";
 
 export const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      {
+        path:'about-us',
+        Component: AboutUs
+      }
     ],
   },
 ]);
