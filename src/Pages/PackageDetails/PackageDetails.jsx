@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 const PackageDetails = () => {
   const navigate = useNavigate();
   const packageData = useLoaderData();
+  const [bookCount, setBookCount] = useState(packageData.bookingCount);
   const [openModal, setOpenModal] = useState(false);
   useEffect(() => {
     if (openModal) {
@@ -57,10 +58,15 @@ const PackageDetails = () => {
       destination,
       status: "pending",
     };
-    axios
-      .post("http://localhost:3000/bookings", bookedData)
-      .then((res) => {
-        if (res.data.insertedId) {
+   axios
+  .post("http://localhost:3000/bookings", bookedData)
+  .then((res) => {
+    if (res.data.insertedId) {
+      
+      axios
+        .patch(`http://localhost:3000/bookings/${_id}`)
+        .then(() => {
+         
           Swal.fire({
             position: "top-end",
             icon: "success",
@@ -68,13 +74,21 @@ const PackageDetails = () => {
             showConfirmButton: false,
             timer: 1500,
           });
+
+        
           navigate("/allPackage");
+          setBookCount((prev) => prev + 1); 
           setOpenModal(false);
-        }
-      })
-      .catch((err) => {
-        console.error(err);
-      });
+        })
+        .catch((err) => {
+          console.error("Failed to update booking count", err);
+        });
+    }
+  })
+  .catch((err) => {
+    console.error(err);
+  });
+
   };
 
   return (
@@ -123,7 +137,7 @@ const PackageDetails = () => {
           <div className="space-y-2">
             <p className="font-semibold">
               🔖 Total Booked so far:{" "}
-              <span className="opacity-55">{bookingCount}</span>{" "}
+              <span className="opacity-55">{bookCount}</span>
             </p>
             <button onClick={handleBook} className="btn btn-secondary w-full">
               Book Now
