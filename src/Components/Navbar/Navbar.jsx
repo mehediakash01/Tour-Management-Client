@@ -75,7 +75,7 @@ const Navbar = () => {
           </div>
            {
               isClicked&& <div className="bg-accent -ml-24 absolute p-3 rounded-md transition-all ease-in-out mt-4 flex flex-col gap-1  ">
-              <Link to={'/addPackage'} className="text-white hover:bg-secondary hover:p-1 hover:rounded-md transition-all ease-in-out ">Add Package </Link> 
+              <Link to={'/add-package'} className="text-white hover:bg-secondary hover:p-1 hover:rounded-md transition-all ease-in-out ">Add Package </Link> 
               <Link to={'/managePackage'} className="text-white hover:bg-secondary hover:p-1 hover:rounded-md transition-all ease-in-out ">Manage My Packages  </Link>
               <button onClick={()=> logoutUser()} className="bg-secondary hover:bg-emerald-600  transition-all ease-in-out btn border-none text-white">log-out</button>
               </div>

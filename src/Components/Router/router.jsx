@@ -9,6 +9,7 @@ import MyBookings from "../MyBookings/MyBookings";
 import AllPackage from "../../Pages/AllPackage/AllPackage";
 import PackageDetails from "../../Pages/PackageDetails/PackageDetails";
 import AboutUs from "../../Pages/AboutUs/AboutUs";
+import AddPackage from "../../Pages/AddPackage/AddPackage";
 
 export const router = createBrowserRouter([
   {
@@ -45,6 +46,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <MyBookings></MyBookings>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "add-package",
+        element: (
+          <PrivateRoute>
+            <AddPackage></AddPackage>
           </PrivateRoute>
         ),
       },
