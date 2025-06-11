@@ -10,6 +10,7 @@ import AllPackage from "../../Pages/AllPackage/AllPackage";
 import PackageDetails from "../../Pages/PackageDetails/PackageDetails";
 import AboutUs from "../../Pages/AboutUs/AboutUs";
 import AddPackage from "../../Pages/AddPackage/AddPackage";
+import ManagePackage from "../../Pages/ManagePackage/ManagePackage";
 
 export const router = createBrowserRouter([
   {
@@ -54,6 +55,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <AddPackage></AddPackage>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "managePackage",
+        element: (
+          <PrivateRoute>
+           <ManagePackage></ManagePackage>
           </PrivateRoute>
         ),
       },
