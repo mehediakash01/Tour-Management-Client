@@ -3,9 +3,11 @@ import AuthInfo from "../../Hooks/AuthInfo";
 
 import axios from "axios";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router";
 
 const AddPackage = () => {
   const { user } = AuthInfo();
+  const navigate  = useNavigate();
   const handleAddPackage = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -20,6 +22,7 @@ const AddPackage = () => {
           showConfirmButton: false,
           timer: 1500,
         });
+        navigate('/managePackage')
         form.reset()
       }
     });

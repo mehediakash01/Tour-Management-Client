@@ -24,11 +24,11 @@ const UpdatePackage = () => {
     axios
       .put(`http://localhost:3000/allPackage/${_id}`, packageObj)
       .then((res) => {
-        if (res.data.modifiedCount) {
+        if (res.data.modifiedCount>0) {
           Swal.fire({
             position: "top-end",
             icon: "success",
-            title: "package has been added",
+            title: "package has been Updated",
             showConfirmButton: false,
             timer: 1500,
           });
