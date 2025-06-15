@@ -19,7 +19,9 @@ export const router = createBrowserRouter([
     errorElement: <ErrorPage></ErrorPage>,
     Component: Root,
     children: [
-      { index: true, Component: Home },
+      { index: true, 
+        loader:()=>fetch('http://localhost:3000/limitedPackages'),
+        Component: Home },
       {
         path: "login",
         Component: Login,
