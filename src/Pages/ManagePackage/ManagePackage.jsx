@@ -9,7 +9,7 @@ const ManagePackage = () => {
     return (
         <div className='w-11/12 mx-auto my-12'>
           <Suspense fallback={<Loading></Loading>}>
-            <MyPackageTable myPackagePromise={myPackagePromise(user?.email)}></MyPackageTable>
+            <MyPackageTable myPackagePromise={myPackagePromise(user?.email, user?.accessToken)}></MyPackageTable>
           </Suspense>
             
         </div>
