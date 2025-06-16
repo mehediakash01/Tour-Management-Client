@@ -13,7 +13,11 @@ const AddPackage = () => {
     const form = e.target;
     const formData = new FormData(form);
     const packageData = Object.fromEntries(formData.entries());
-    axios.post("http://localhost:3000/allPackage", packageData).then((res) => {
+    axios.post("http://localhost:3000/allPackage", packageData, {
+         headers: {
+      Authorization: `Bearer ${user?.accessToken}`,
+    },
+    } ).then((res) => {
       if (res.data.insertedId) {
         Swal.fire({
           position: "top-end",
