@@ -8,8 +8,8 @@ const WhyChooseUs = () => {
           <span className="bg-green-100 text-green-700 font-medium px-3 py-1 rounded-full text-sm">
             Why choose us
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold my-4 leading-tight">
-            People why choose our <br /> travel adventure
+          <h2 className="text-4xl md:text-5xl font-bold text-accent my-4 leading-tight">
+            Why travelers love our <br /> tour experiences
           </h2>
 
           <div className="grid grid-cols-2 gap-6 mt-8">
@@ -17,9 +17,9 @@ const WhyChooseUs = () => {
               <div className="text-green-600 text-2xl mb-2">
                 <FaShieldAlt />
               </div>
-              <h4 className="font-semibold">Best security</h4>
+              <h4 className="font-semibold">Best Security</h4>
               <p className="text-sm text-gray-600">
-                We denounce with righteous indignation and dislike.
+                Your safety is our top priority, with expert guides and secure accommodations.
               </p>
             </div>
 
@@ -27,9 +27,9 @@ const WhyChooseUs = () => {
               <div className="text-green-600 text-2xl mb-2">
                 <FaWifi />
               </div>
-              <h4 className="font-semibold">Free internet</h4>
+              <h4 className="font-semibold">Free Internet</h4>
               <p className="text-sm text-gray-600">
-                We denounce with righteous indignation and dislike.
+                Stay connected throughout your journey with complimentary Wi-Fi access.
               </p>
             </div>
 
@@ -37,9 +37,9 @@ const WhyChooseUs = () => {
               <div className="text-green-600 text-2xl mb-2">
                 <FaSolarPanel />
               </div>
-              <h4 className="font-semibold">Solar energy</h4>
+              <h4 className="font-semibold">Eco-Friendly Power</h4>
               <p className="text-sm text-gray-600">
-                We denounce with righteous indignation and dislike.
+                We power our camps and lodges with solar energy to protect the environment.
               </p>
             </div>
 
@@ -47,16 +47,16 @@ const WhyChooseUs = () => {
               <div className="text-green-600 text-2xl mb-2">
                 <FaBicycle />
               </div>
-              <h4 className="font-semibold">Mountain biking</h4>
+              <h4 className="font-semibold">Adventure Biking</h4>
               <p className="text-sm text-gray-600">
-                We denounce with righteous indignation and dislike.
+                Explore off-road trails and scenic routes with our guided mountain biking tours.
               </p>
             </div>
           </div>
         </div>
 
         <div>
-          <img src="https://i.ibb.co/pB1qBHV6/experience.png" alt="" />
+          <img src="https://i.ibb.co/pB1qBHV6/experience.png" alt="Why Choose Us" />
         </div>
       </div>
     </section>

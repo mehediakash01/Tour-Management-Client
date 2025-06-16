@@ -31,7 +31,11 @@ const SocialButton = () => {
 
   return (
     <div>
-      <p className="text-center">or</p>
+     <div className="flex w-full flex-col">
+  
+  <div className="divider">OR</div>
+
+</div>
       <button onClick={handleGoogle} className="btn btn-info w-full">
         {" "}
         <FcGoogle /> Continue with Google

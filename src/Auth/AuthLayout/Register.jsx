@@ -48,7 +48,7 @@ const Register = () => {
 
   return (
     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto my-8">
-      <h1 className="font-bold text-4xl my-3 text-center">Register Now!</h1>
+      <h1 className="font-bold text-4xl my-3 text-center text-accent">Register Now!</h1>
       <div className="card-body">
         <form onSubmit={handleSignUp} className="fieldset">
           {/* Name */}
@@ -117,7 +117,7 @@ const Register = () => {
           </p>
           <Link to={"/login"}>Already have an account? Login</Link>
 
-          <button type="submit" className="btn btn-neutral mt-4">
+          <button type="submit" className="btn btn-secondary mt-4">
             Register
           </button>
         </form>
