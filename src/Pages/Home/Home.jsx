@@ -4,6 +4,7 @@ import Featured from "../../Components/FeaturedSection/Featured";
 import { Link, useLoaderData } from "react-router";
 import { FaArrowRight } from "react-icons/fa6";
 import FrequentlyAsked from "../../Components/FrequentlyAsked/FrequentlyAsked";
+import WhyChooseUs from "../../Components/WhyChooseUs/WhyChooseUs";
 
 const Home = () => {
   const allFeatured = useLoaderData();
@@ -11,6 +12,9 @@ const Home = () => {
   return (
     <div>
       <Banner></Banner>
+      <div>
+        <h1 className="text-center font-bold text-4xl  text-accent mt-5">Our Featured Tours</h1>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
         {allFeatured.map((featuredData) => (
           <Featured
@@ -23,6 +27,8 @@ const Home = () => {
         <Link to={'/allPackage'}><button className="btn  btn-accent text-white flex items-center">Show All <FaArrowRight /></button></Link>
       </div>
       <FrequentlyAsked></FrequentlyAsked>
+
+      <WhyChooseUs></WhyChooseUs>
     </div>
   );
 };
