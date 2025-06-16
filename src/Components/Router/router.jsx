@@ -32,7 +32,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "allPackage",
-        loader: () => fetch("http://localhost:3000/allPackage"),
+        // loader: () => fetch("http://localhost:3000/allPackage"),
         Component: AllPackage,
       },
       {

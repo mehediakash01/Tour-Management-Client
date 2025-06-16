@@ -5,44 +5,29 @@ import AuthInfo from "../../Hooks/AuthInfo";
 import ThemeToggle from "../Theme/ThemeToggle";
 
 const Navbar = () => {
-  const [isClicked,setIsClicked] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
   const { user, logoutUser } = AuthInfo();
 
- 
   const links = (
-    <ul className="space-x-4 text-white">
-      {user ? (
-        <>
-          {" "}
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/allPackage">All Packages</NavLink>
-          <NavLink to="/my-bookings">My Bookings</NavLink>
-          <NavLink to="/About-Us">About Us</NavLink>
-        </>
-      ) : (
-        <>
-          {" "}
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/allPackage">All Packages</NavLink>
-          <NavLink to="/About-Us">About Us</NavLink>
-        </>
-      )}
-      
+    <ul className="space-x-4 text-white menu menu-horizontal px-1">
+      <NavLink to="/">Home</NavLink>
+      <NavLink to="/allPackage">All Packages</NavLink>
+      {user && <NavLink to="/my-bookings">My Bookings</NavLink>}
+      <NavLink to="/About-Us">About Us</NavLink>
     </ul>
   );
 
   return (
-    <div className="navbar flex justify-between bg-primary shadow-sm">
-      <div className="navbar-start w-fit">
-        <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+    <div className="navbar bg-primary shadow-sm px-4 relative">
+      <div className="navbar-start flex-1">
+        <div className="dropdown lg:hidden">
+          <div tabIndex={0} role="button" className="btn btn-ghost">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
               fill="none"
               viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
+              stroke="currentColor">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -53,51 +38,63 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
-          >
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
             {links}
           </ul>
         </div>
-        <div className="flex items-center">
-          <img src={navLogo} className="w-12 h-12 " alt="" />
+        <div className="flex items-center gap-2">
+          <img src={navLogo} className="w-12 h-12" alt="Logo" />
           <p className="text-secondary font-bold text-3xl">
             Trip<span className="text-accent">Ease</span>
           </p>
         </div>
       </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{links}</ul>
+
+      <div className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2">
+        {links}
       </div>
-      
-      
-      <div className="navbar-end flex items-center gap-3">
-        <ThemeToggle></ThemeToggle>
+
+      <div className="navbar-end flex-none flex items-center gap-2">
+        <ThemeToggle />
+
         {user ? (
-          <div className=" relative ">
-            <div onClick={()=>setIsClicked(!isClicked)} className=" rounded-full">
-        
-              <img className="w-12 h-12 rounded-full ring-1  ring-secondary" src={user.photoURL} alt="" />
-        
+          <div className="relative">
+            <div
+              onClick={() => setIsClicked(!isClicked)}
+              className="cursor-pointer">
+              <img
+                className="w-10 h-10 rounded-full ring-1 ring-secondary"
+                src={user.photoURL}
+                alt="User"
+              />
             </div>
-             {
-                isClicked&& <div className="z-10 bg-accent -ml-24 absolute p-3 rounded-md transition-all ease-in-out mt-4 flex flex-col gap-1  ">
-                <Link to={'/add-package'} className="text-white hover:bg-secondary hover:p-1 hover:rounded-md transition-all ease-in-out ">Add Package </Link>
-                <Link to={'/managePackage'} className="text-white hover:bg-secondary hover:p-1 hover:rounded-md transition-all ease-in-out ">Manage My Packages  </Link>
-                <button onClick={()=> logoutUser()} className="bg-secondary hover:bg-emerald-600  transition-all ease-in-out btn border-none text-white">log-out</button>
-                </div>
-              }
+            {isClicked && (
+              <div className="absolute right-0 mt-4 z-10 bg-accent p-3 rounded-md shadow flex flex-col gap-1">
+                <Link
+                  to="/add-package"
+                  className="text-white hover:bg-secondary px-2 py-1 rounded-md transition">
+                  Add Package
+                </Link>
+                <Link
+                  to="/managePackage"
+                  className="text-white hover:bg-secondary px-2 py-1 rounded-md transition">
+                  Manage My Packages
+                </Link>
+                <button
+                  onClick={() => logoutUser()}
+                  className="btn bg-secondary hover:bg-emerald-600 text-white border-none">
+                  Logout
+                </button>
+              </div>
+            )}
           </div>
         ) : (
-          <div className="flex justify-end space-x-2">
-            <Link to={"/login"}>
-              <button className="btn bg-secondary text-white  ">
-                Login
-              </button>
+          <div className="flex space-x-2">
+            <Link to="/login">
+              <button className="btn bg-secondary text-white">Login</button>
             </Link>
-            <Link to={"/register"}>
-              <button className="btn  bg-secondary text-white ">
-                Register
-              </button>
+            <Link to="/register">
+              <button className="btn bg-secondary text-white">Register</button>
             </Link>
           </div>
         )}

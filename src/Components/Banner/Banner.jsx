@@ -11,7 +11,7 @@ const Banner = () => {
                     <Link to={'/allPackage'}><button className='btn btn-secondary'>Explore All Packages</button></Link>
                 </div>
                 <div>
-                    <img src="https://i.ibb.co/0R1jT4S0/Screenshot-2025-06-15-190344-removebg-preview.png" alt="" />
+                    <img className='w-[750px]' src="https://i.ibb.co/0R1jT4S0/Screenshot-2025-06-15-190344-removebg-preview.png" alt="" />
                 </div>
             </div>
             
