@@ -13,7 +13,7 @@ const AddPackage = () => {
     const form = e.target;
     const formData = new FormData(form);
     const packageData = Object.fromEntries(formData.entries());
-    axios.post("http://localhost:3000/allPackage", packageData, {
+    axios.post("https://tour-package-booking-management-server-qysjrbna2.vercel.app/allPackage", packageData, {
          headers: {
       Authorization: `Bearer ${user?.accessToken}`,
     },

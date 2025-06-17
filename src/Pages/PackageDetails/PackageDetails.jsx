@@ -20,7 +20,7 @@ const PackageDetails = () => {
     setLoading(true);
 
     axios
-      .get(`http://localhost:3000/allPackage/${id}`, {
+      .get(`https://tour-package-booking-management-server-qysjrbna2.vercel.app/allPackage/${id}`, {
         headers: {
           Authorization: `Bearer ${user.accessToken}`,
         },
@@ -89,11 +89,11 @@ const PackageDetails = () => {
     };
 
     axios
-      .post("http://localhost:3000/bookings", bookedData)
+      .post("https://tour-package-booking-management-server-qysjrbna2.vercel.app/bookings", bookedData)
       .then((res) => {
         if (res.data.insertedId) {
           axios
-            .patch(`http://localhost:3000/bookings/${_id}`)
+            .patch(`https://tour-package-booking-management-server-qysjrbna2.vercel.app/bookings/${_id}`)
             .then(() => {
               Swal.fire({
                 position: "top-end",

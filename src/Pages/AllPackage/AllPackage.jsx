@@ -13,7 +13,7 @@ const AllPackage = () => {
     setLoading(true);
 
     axios
-      .get("http://localhost:3000/allPackage", {
+      .get("https://tour-package-booking-management-server-qysjrbna2.vercel.app/allPackage", {
         params: { search },
       })
       .then((res) => {

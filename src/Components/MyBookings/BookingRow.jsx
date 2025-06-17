@@ -19,7 +19,7 @@ const BookingRow = ({ myBooking, index }) => {
   const handleConfirm = (id) => {
 
     axios
-      .patch(`http://localhost:3000/bookings/status/${id}`, { status: "completed" })
+      .patch(`https://tour-package-booking-management-server-qysjrbna2.vercel.app/bookings/status/${id}`, { status: "completed" })
       .then((res) => {
       if (res.data.modifiedCount > 0) {
         Swal.fire("Confirmed!", "Booking marked as completed", "success");
