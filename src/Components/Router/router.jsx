@@ -20,7 +20,7 @@ export const router = createBrowserRouter([
     Component: Root,
     children: [
       { index: true, 
-        loader:()=>fetch('https://tour-package-booking-management-server-qysjrbna2.vercel.app/limitedPackages'),
+        loader:()=>fetch('https://tour-package-booking-management-ser.vercel.app/limitedPackages'),
         Component: Home },
       {
         path: "login",
@@ -32,13 +32,13 @@ export const router = createBrowserRouter([
       },
       {
         path: "allPackage",
-        // loader: () => fetch("https://tour-package-booking-management-server-qysjrbna2.vercel.app/allPackage"),
+        // loader: () => fetch("https://tour-package-booking-management-ser.vercel.app/allPackage"),
         Component: AllPackage,
       },
       {
         path: "package/:id",
         // loader: ({ params }) =>
-        //   fetch(`https://tour-package-booking-management-server-qysjrbna2.vercel.app/allPackage/${params.id}`),
+        //   fetch(`https://tour-package-booking-management-ser.vercel.app/allPackage/${params.id}`),
         element: (
           <PrivateRoute>
             <PackageDetails> </PackageDetails>
@@ -75,7 +75,7 @@ export const router = createBrowserRouter([
       },
       {
         path:'update/:id',
-        loader: ({params})=>fetch(`https://tour-package-booking-management-server-qysjrbna2.vercel.app/allPackage/${params.id}`),
+        loader: ({params})=>fetch(`https://tour-package-booking-management-ser.vercel.app/allPackage/${params.id}`),
         Component: UpdatePackage
       },
     ],

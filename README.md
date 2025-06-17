@@ -1,12 +1,70 @@
-# React + Vite
+# Tour Management Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Purpose
+This Tour Management application is designed to provide users with a seamless experience to browse, book, and manage tours. It includes user authentication, tour listings, booking management, and admin functionalities. The goal is to offer a modern, responsive, and interactive platform for travelers and tour operators.
 
-Currently, two official plugins are available:
+## Features
+- User registration and login using Firebase Authentication
+- Browse and search available tours
+- Book tours with real-time booking management
+- Interactive UI with smooth animations
+- Responsive design for all device sizes
+- JWT-based authentication with Firebase token integration
+- Real-time feedback using Sweet Alert notifications
+- Animated loading and UI feedback using Lottie React
+- Secure backend API with Node.js, Express.js, and Firebase Admin SDK
+- MongoDB for data storage and management
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Live URL
+- Frontend deployed on Surge: [https://tripease.surge.sh/]
+- Backend deployed on Vercel: [https://your-tour-management-backend.vercel.app]
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Tech Stack
+
+### Frontend
+- React
+- React Router
+- Tailwind CSS
+- DaisyUI
+- Firebase Authentication
+- React Icons
+- Framer Motion
+- Sweet Alert
+- Lottie React
+- Axios
+- dotenv (for environment variables)
+
+### Backend
+- Node.js
+- Express.js
+- Firebase Admin SDK (for server-side Firebase features and JWT token verification)
+- MongoDB (using Mongoose or native driver)
+- dotenv (for environment variables)
+
+### Deployment
+- Frontend deployed on Surge
+- Backend deployed on Vercel
+
+## NPM Packages Used
+
+### Frontend
+- `react`
+- `react-router-dom`
+- `tailwindcss`
+- `daisyui`
+- `firebase`
+- `sweetalert2`
+- `react-icons`
+- `framer-motion`
+- `axios`
+- `lottie-react`
+- `dotenv`
+
+### Backend
+- `express`
+- `dotenv`
+- `firebase-admin`
+- `mongodb`
+

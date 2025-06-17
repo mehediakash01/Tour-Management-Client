@@ -24,7 +24,7 @@ const PackageRow = ({ myPackage, index, onDelete }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`https://tour-package-booking-management-server-qysjrbna2.vercel.app/allPackage/${id}`).then((res) => {
+        axios.delete(`https://tour-package-booking-management-ser.vercel.app/allPackage/${id}`).then((res) => {
           if (res.data.deletedCount > 0) {
             Swal.fire({
               title: "Deleted!",

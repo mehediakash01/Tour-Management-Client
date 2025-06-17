@@ -22,7 +22,7 @@ const UpdatePackage = () => {
     const packageObj = Object.fromEntries(formData.entries());
 
     axios
-      .put(`https://tour-package-booking-management-server-qysjrbna2.vercel.app/allPackage/${_id}`, packageObj)
+      .put(`https://tour-package-booking-management-ser.vercel.app/allPackage/${_id}`, packageObj)
       .then((res) => {
         if (res.data.modifiedCount>0) {
           Swal.fire({

@@ -9,7 +9,7 @@ const Navbar = () => {
   const { user, logoutUser } = AuthInfo();
 
   const links = (
-    <ul className="space-x-4 text-white menu menu-horizontal px-1">
+    <ul className="space-x-4 lg:text-white menu menu-horizontal px-1">
       <NavLink to="/">Home</NavLink>
       <NavLink to="/allPackage">All Packages</NavLink>
       {user && <NavLink to="/my-bookings">My Bookings</NavLink>}
@@ -21,7 +21,7 @@ const Navbar = () => {
     <div className="navbar bg-primary shadow-sm px-4 relative">
       <div className="navbar-start flex-1">
         <div className="dropdown lg:hidden">
-          <div tabIndex={0} role="button" className="btn btn-ghost">
+          <div tabIndex={0} role="button" className="btn btn-ghost btn-sm">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -43,8 +43,8 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex items-center gap-2">
-          <img src={navLogo} className="w-12 h-12" alt="Logo" />
-          <p className="text-secondary font-bold text-3xl">
+          <img src={navLogo} className="lg:w-12 lg:h-12 w-10 h-10" alt="Logo" />
+          <p className="text-secondary font-bold text-xl lg:text-3xl">
             Trip<span className="text-accent">Ease</span>
           </p>
         </div>
@@ -89,12 +89,12 @@ const Navbar = () => {
             )}
           </div>
         ) : (
-          <div className="flex space-x-2">
+          <div className="flex  space-x-2">
             <Link to="/login">
-              <button className="btn bg-secondary text-white">Login</button>
+              <button className="btn btn-sm bg-secondary text-white">Login</button>
             </Link>
             <Link to="/register">
-              <button className="btn bg-secondary text-white">Register</button>
+              <button className="btn btn-sm bg-secondary text-white">Register</button>
             </Link>
           </div>
         )}

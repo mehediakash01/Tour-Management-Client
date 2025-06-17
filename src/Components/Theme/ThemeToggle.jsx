@@ -3,13 +3,13 @@ import React from "react";
 const ThemeToggle = () => {
   return (
     <div>
-      <label className="swap swap-rotate">
+      <label className="swap swap-rotate ">
         {/* this hidden checkbox controls the state */}
         <input type="checkbox" className="theme-controller" value="dark" />
 
         {/* sun icon */}
         <svg 
-          className="swap-off h-10 w-10 fill-current text-white"
+          className="swap-off lg:h-10 lg:w-10 w-8 h-8 fill-current text-white"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
@@ -18,7 +18,7 @@ const ThemeToggle = () => {
 
         {/* moon icon */}
         <svg
-          className="swap-on h-10 w-10 fill-current"
+          className="swap-on  lg:h-10 lg:w-10 w-8 h-8  fill-current"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
