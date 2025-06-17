@@ -2,8 +2,9 @@ import { FaShieldAlt, FaWifi, FaSolarPanel, FaBicycle } from "react-icons/fa";
 
 const WhyChooseUs = () => {
   return (
-    <section className="bg-[#f4f8f4] py-16">
-      <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 items-center gap-10">
+    <section className=" my-10">
+     <h1 className="lg:text-5xl text-3xl font-bold text-accent text-center my-4">why You should Trust Us</h1>
+      <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 items-center gap-10 bg-[#f4f8f4]  py-16">
         <div>
           <span className="bg-green-100 text-green-700 font-medium px-3 py-1 rounded-full text-sm">
             Why choose us

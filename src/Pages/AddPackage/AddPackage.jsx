@@ -1,35 +1,52 @@
 import React from "react";
 import AuthInfo from "../../Hooks/AuthInfo";
-
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router";
 
 const AddPackage = () => {
   const { user } = AuthInfo();
-  const navigate  = useNavigate();
-  const handleAddPackage = (e) => {
+  const navigate = useNavigate();
+
+  const handleAddPackage = async (e) => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
     const packageData = Object.fromEntries(formData.entries());
-    axios.post("https://tour-package-booking-management-ser.vercel.app/allPackage", packageData, {
-         headers: {
-      Authorization: `Bearer ${user?.accessToken}`,
-    },
-    } ).then((res) => {
+
+    try {
+      // Get the Firebase ID token (JWT) for authorization
+      const idToken = await user.getIdToken();
+
+      const res = await axios.post(
+        "https://tour-package-booking-management-ser.vercel.app/allPackage",
+        packageData,
+        {
+          headers: {
+            Authorization: `bearer ${idToken}`, // lowercase 'bearer ' per your backend code
+          },
+        }
+      );
+
       if (res.data.insertedId) {
         Swal.fire({
           position: "top-end",
           icon: "success",
-          title: "package has been added",
+          title: "Package has been added",
           showConfirmButton: false,
           timer: 1500,
         });
-        navigate('/managePackage')
-        form.reset()
+        navigate("/managePackage");
+        form.reset();
       }
-    });
+    } catch (error) {
+      console.error("Failed to add package", error);
+      Swal.fire({
+        icon: "error",
+        title: "Failed to add package",
+        text: error.response?.data?.message || error.message,
+      });
+    }
   };
 
   return (
@@ -46,6 +63,7 @@ const AddPackage = () => {
             type="text"
             name="tour_name"
             className="input input-bordered w-full"
+            required
           />
         </div>
 
@@ -57,6 +75,7 @@ const AddPackage = () => {
             type="text"
             name="image"
             className="input input-bordered w-full"
+            required
           />
         </div>
 
@@ -69,6 +88,7 @@ const AddPackage = () => {
             name="duration"
             placeholder="e.g., 3 Days 2 Nights"
             className="input input-bordered w-full"
+            required
           />
         </div>
 
@@ -80,6 +100,7 @@ const AddPackage = () => {
             type="text"
             name="departure_location"
             className="input input-bordered w-full"
+            required
           />
         </div>
 
@@ -91,6 +112,7 @@ const AddPackage = () => {
             type="text"
             name="destination"
             className="input input-bordered w-full"
+            required
           />
         </div>
 
@@ -102,6 +124,7 @@ const AddPackage = () => {
             type="number"
             name="price"
             className="input input-bordered w-full"
+            required
           />
         </div>
 
@@ -113,6 +136,7 @@ const AddPackage = () => {
             type="date"
             name="departure_date"
             className="input input-bordered w-full"
+            required
           />
         </div>
 
@@ -125,6 +149,7 @@ const AddPackage = () => {
             rows={4}
             className="textarea textarea-bordered w-full"
             placeholder="Describe the tour package..."
+            required
           ></textarea>
         </div>
 
@@ -137,6 +162,7 @@ const AddPackage = () => {
             name="guide_contact_no"
             placeholder="e.g., +880123456789"
             className="input input-bordered w-full"
+            required
           />
         </div>
 
@@ -147,7 +173,7 @@ const AddPackage = () => {
           <input
             type="text"
             name="guide_name"
-            value={user?.displayName}
+            value={user?.displayName || ""}
             readOnly
             className="input input-bordered w-full"
           />
@@ -160,7 +186,7 @@ const AddPackage = () => {
           <input
             type="text"
             name="guide_photo"
-            value={user?.photoURL}
+            value={user?.photoURL || ""}
             readOnly
             className="input input-bordered w-full"
           />
@@ -173,7 +199,7 @@ const AddPackage = () => {
           <input
             type="email"
             name="guide_email"
-            value={user?.email}
+            value={user?.email || ""}
             readOnly
             className="input input-bordered w-full"
           />

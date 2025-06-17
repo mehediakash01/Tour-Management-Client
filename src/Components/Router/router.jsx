@@ -75,7 +75,7 @@ export const router = createBrowserRouter([
       },
       {
         path:'update/:id',
-        loader: ({params})=>fetch(`https://tour-package-booking-management-ser.vercel.app/allPackage/${params.id}`),
+        // loader: ({params})=>fetch(`https://tour-package-booking-management-ser.vercel.app/allPackage/${params.id}`),
         Component: UpdatePackage
       },
     ],

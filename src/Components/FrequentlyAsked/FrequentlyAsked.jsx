@@ -3,6 +3,7 @@ import React from "react";
 const FrequentlyAsked = () => {
   return (
     <div className="w-11/12 mx-auto">
+       <h1 className="text-3xl font-bold text-accent text-center my-4">What People Frequently Asked</h1>
       <div className="flex lg:flex-row md:flex-row flex-col-reverse justify-around items-center my-8">
         <div className="join join-vertical bg-base-100">
           <div className="collapse collapse-arrow join-item border-base-300 border">
