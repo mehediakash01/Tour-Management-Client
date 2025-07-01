@@ -12,6 +12,7 @@ import AboutUs from "../../Pages/AboutUs/AboutUs";
 import AddPackage from "../../Pages/AddPackage/AddPackage";
 import ManagePackage from "../../Pages/ManagePackage/ManagePackage";
 import UpdatePackage from "../../Pages/ManagePackage/UpdatePackage";
+import Contact from "../../Pages/ContactUs/Contact";
 
 export const router = createBrowserRouter([
   {
@@ -72,6 +73,10 @@ export const router = createBrowserRouter([
       {
         path:'about-us',
         Component: AboutUs
+      },
+      {
+        path:'contact',
+        Component: Contact
       },
       {
         path:'update/:id',

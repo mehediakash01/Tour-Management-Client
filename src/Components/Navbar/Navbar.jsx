@@ -14,11 +14,12 @@ const Navbar = () => {
       <NavLink to="/allPackage">All Packages</NavLink>
       {user && <NavLink to="/my-bookings">My Bookings</NavLink>}
       <NavLink to="/About-Us">About Us</NavLink>
+      <NavLink to="/contact">Contact Us</NavLink>
     </ul>
   );
 
   return (
-    <div className="navbar bg-primary shadow-sm px-4 relative">
+    <div className="navbar bg-primary/90 shadow-sm px-4  sticky top-0 z-10">
       <div className="navbar-start flex-1">
         <div className="dropdown lg:hidden">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-sm">
