@@ -12,6 +12,7 @@ const AllPackage = () => {
   const [packageData, setPackageData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [tableView, setTableView] = useState(false);
+  const [sortOption, setSortOption] = useState(""); // new state for sorting
 
   useEffect(() => {
     setLoading(true);
@@ -21,7 +22,30 @@ const AllPackage = () => {
         params: { search },
       })
       .then((res) => {
-        setPackageData(res.data);
+        let result = [...res.data];
+
+        // Sort logic based on selected option
+        if (sortOption === "tour_name_asc") {
+          result.sort((a, b) => a.tour_name.localeCompare(b.tour_name));
+        } else if (sortOption === "tour_name_desc") {
+          result.sort((a, b) => b.tour_name.localeCompare(a.tour_name));
+        } else if (sortOption === "duration_asc") {
+          result.sort((a, b) => parseInt(a.duration) - parseInt(b.duration));
+        } else if (sortOption === "duration_desc") {
+          result.sort((a, b) => parseInt(b.duration) - parseInt(a.duration));
+        } else if (sortOption === "departure_date_asc") {
+          result.sort(
+            (a, b) =>
+              new Date(a.departure_date) - new Date(b.departure_date)
+          );
+        } else if (sortOption === "departure_date_desc") {
+          result.sort(
+            (a, b) =>
+              new Date(b.departure_date) - new Date(a.departure_date)
+          );
+        }
+
+        setPackageData(result);
       })
       .catch((err) => {
         console.error("Error fetching:", err);
@@ -29,7 +53,7 @@ const AllPackage = () => {
       .finally(() => {
         setLoading(false);
       });
-  }, [search]);
+  }, [search, sortOption]);
 
   return (
     <div className="w-11/12 mx-auto my-12">
@@ -37,39 +61,58 @@ const AllPackage = () => {
         Tour Packages
       </h1>
 
-      <div className="flex gap-6 items-center mb-4">
+      {/* Controls */}
+      <div className="flex flex-col md:flex-row gap-4 items-center mb-6">
+        {/* Search */}
         <input
           type="text"
           placeholder="Search..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="input input-secondary"
+          className="input input-secondary w-full md:w-1/3"
         />
-         <div >
-          <button onClick={()=>setTableView(!tableView)}>
-          { tableView? <FaTableCells size={30} />:<IoGridOutline size={30} /> }  
-          </button>
-      </div>
-      
-      </div>
-     
 
-     <div>
-  {loading ? (
-    <Loading />
-  ) : packageData.length === 0 ? (
-    <Empty setSearch={setSearch} />
-  ) : tableView ? (
-    <TableView data={packageData} />
-  ) : (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {packageData.map((pkg) => (
-        <AllPackageCard key={pkg._id} allPackage={pkg} />
-      ))}
-    </div>
-  )}
-</div>
+        {/* Sort Dropdown */}
+        <select
+          value={sortOption}
+          onChange={(e) => setSortOption(e.target.value)}
+          className="select select-secondary w-full md:w-1/4"
+        >
+          <option value="">Sort By</option>
+          <option value="tour_name_asc">Name (A-Z)</option>
+          <option value="tour_name_desc">Name (Z-A)</option>
+          <option value="duration_asc">Duration (Low to High)</option>
+          <option value="duration_desc">Duration (High to Low)</option>
+          <option value="departure_date_asc">Departure (Earliest)</option>
+          <option value="departure_date_desc">Departure (Latest)</option>
+        </select>
 
+        {/* View Toggle */}
+        <button
+          onClick={() => setTableView(!tableView)}
+          className="btn btn-outline btn-primary"
+          title="Toggle View"
+        >
+          {tableView ? <FaTableCells size={22} /> : <IoGridOutline size={22} />}
+        </button>
+      </div>
+
+      {/* Content */}
+      <div>
+        {loading ? (
+          <Loading />
+        ) : packageData.length === 0 ? (
+          <Empty setSearch={setSearch} />
+        ) : tableView ? (
+          <TableView data={packageData} />
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {packageData.map((pkg) => (
+              <AllPackageCard key={pkg._id} allPackage={pkg} />
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 };
