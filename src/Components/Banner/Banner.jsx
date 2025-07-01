@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import { motion } from "framer-motion";
 const Banner = () => {
   return (
-    <div className=" my-12  ">
+    <div className=" max-h-[70vh]  ">
       <div className="flex lg: justify-around lg:items-center lg:flex-row md:flex-row md:items-center  flex-col-reverse  bg-accent rounded-md p-6 ">
         <motion.div
           initial="hidden"
@@ -25,7 +25,7 @@ const Banner = () => {
             }}
             className="text-5xl text-white font-extrabold"
           >
-            Discover the World with Us
+            Discover the World <br /> with Us
           </motion.h1>
           <motion.p
             variants={{
