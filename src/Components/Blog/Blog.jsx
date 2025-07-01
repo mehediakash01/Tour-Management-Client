@@ -39,7 +39,7 @@ const Blog = () => {
 
   return (
     <section className="py-16 bg-base-100">
-      <div className="max-w-7xl mx-auto px-4 text-center">
+      <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-accent">From Our Blog</h2>
         <p className="text-base-content/70 mb-10">
           Tips, guides and stories from travel experts to make your journey smooth.
