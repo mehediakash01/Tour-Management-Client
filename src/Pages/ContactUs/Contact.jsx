@@ -1,6 +1,8 @@
 import React from "react";
+import useTitle from "../../Hooks/useTitle";
 
 const Contact = () => {
+  useTitle("contact-us");
   return (
     <div className="min-h-screen flex items-center justify-center bg-base-100 px-4">
       <div className="max-w-5xl w-full  ">

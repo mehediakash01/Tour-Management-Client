@@ -4,8 +4,10 @@ import AuthInfo from "../../Hooks/AuthInfo";
 import axios from "axios";
 import Swal from "sweetalert2";
 import Loading from "../Loading/Loading";
+import useTitle from "../../Hooks/useTitle";
 
 const PackageDetails = () => {
+  useTitle("package-details");
   const { user } = AuthInfo();
   const navigate = useNavigate();
   const { id } = useParams();

@@ -6,6 +6,7 @@ import Empty from "../Empty";
 import { IoGridOutline } from "react-icons/io5";
 import { FaTableCells } from "react-icons/fa6";
 import TableView from "./TableView";
+import useTitle from "../../Hooks/useTitle";
 
 const AllPackage = () => {
   const [search, setSearch] = useState("");
@@ -13,7 +14,7 @@ const AllPackage = () => {
   const [loading, setLoading] = useState(false);
   const [tableView, setTableView] = useState(false);
   const [sortOption, setSortOption] = useState(""); // new state for sorting
-
+useTitle("All-Package");
   useEffect(() => {
     setLoading(true);
 

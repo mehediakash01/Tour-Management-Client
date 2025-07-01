@@ -6,10 +6,11 @@ import { FaArrowRight } from "react-icons/fa6";
 import FrequentlyAsked from "../../Components/FrequentlyAsked/FrequentlyAsked";
 import WhyChooseUs from "../../Components/WhyChooseUs/WhyChooseUs";
 import Blog from "../../Components/Blog/Blog";
+import useTitle from "../../Hooks/useTitle";
 
 const Home = () => {
   const allFeatured = useLoaderData();
-
+useTitle("Home");
   return (
     <div>
       <Banner></Banner>

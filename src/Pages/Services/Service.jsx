@@ -7,8 +7,10 @@ import {
   FaStar,
   FaUsers,
 } from "react-icons/fa6";
+import useTitle from "../../Hooks/useTitle";
 
 const Service = () => {
+  useTitle("services");
   return (
     <section className="bg-base-200 py-16 px-4 md:px-8 max-w-7xl mx-auto rounded-lg shadow-inner my-12">
       <h2 className="text-4xl font-bold text-center mb-12">What We Do</h2>

@@ -3,11 +3,12 @@ import AuthInfo from "../../Hooks/AuthInfo";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router";
+import useTitle from "../../Hooks/useTitle";
 
 const AddPackage = () => {
   const { user } = AuthInfo();
   const navigate = useNavigate();
-
+useTitle("add-package")
   const handleAddPackage = async (e) => {
     e.preventDefault();
     const form = e.target;

@@ -11,8 +11,10 @@ import {
   FaUsers,
 } from "react-icons/fa";
 import { Link } from "react-router";
+import useTitle from "../../Hooks/useTitle";
 
 const AboutUs = () => {
+  useTitle("About-us")
   return (
     <div className="">
       <section className="grid grid-cols-1 md:grid-cols-2 gap-10  items-center bg-accent p-8  shadow-md">
