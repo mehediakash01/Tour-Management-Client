@@ -23,7 +23,7 @@ const Banner = () => {
               hidden: { opacity: 0, y: 30 },
               visible: { opacity: 1, y: 0 },
             }}
-            className="text-7xl text-white font-extrabold"
+            className="lg:text-7xl text-4xl text-white font-extrabold"
           >
             Discover the World <br /> with Us
           </motion.h1>

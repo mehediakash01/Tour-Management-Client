@@ -5,6 +5,7 @@ import { Link, useLoaderData } from "react-router";
 import { FaArrowRight } from "react-icons/fa6";
 import FrequentlyAsked from "../../Components/FrequentlyAsked/FrequentlyAsked";
 import WhyChooseUs from "../../Components/WhyChooseUs/WhyChooseUs";
+import Blog from "../../Components/Blog/Blog";
 
 const Home = () => {
   const allFeatured = useLoaderData();
@@ -26,6 +27,7 @@ const Home = () => {
       <div className="flex justify-center my-6">
         <Link to={'/allPackage'}><button className="btn  btn-accent text-white flex items-center">Show All <FaArrowRight /></button></Link>
       </div>
+      <Blog></Blog>
       <FrequentlyAsked></FrequentlyAsked>
 
       <WhyChooseUs></WhyChooseUs>
