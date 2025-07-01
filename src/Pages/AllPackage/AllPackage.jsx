@@ -3,11 +3,15 @@ import axios from "axios";
 import AllPackageCard from "./AllPackageCard";
 import Loading from "../Loading/Loading";
 import Empty from "../Empty";
+import { IoGridOutline } from "react-icons/io5";
+import { FaTableCells } from "react-icons/fa6";
+import TableView from "./TableView";
 
 const AllPackage = () => {
   const [search, setSearch] = useState("");
   const [packageData, setPackageData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [tableView, setTableView] = useState(false);
 
   useEffect(() => {
     setLoading(true);
@@ -33,7 +37,7 @@ const AllPackage = () => {
         Tour Packages
       </h1>
 
-      <div className="flex justify-center mb-4">
+      <div className="flex gap-6 items-center mb-4">
         <input
           type="text"
           placeholder="Search..."
@@ -41,19 +45,31 @@ const AllPackage = () => {
           onChange={(e) => setSearch(e.target.value)}
           className="input input-secondary"
         />
+         <div >
+          <button onClick={()=>setTableView(!tableView)}>
+          { tableView? <FaTableCells size={30} />:<IoGridOutline size={30} /> }  
+          </button>
       </div>
+      
+      </div>
+     
 
-      {loading ? (
-        <Loading />
-      ) : packageData.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {packageData.map((pkg) => (
-            <AllPackageCard key={pkg._id} allPackage={pkg} />
-          ))}
-        </div>
-      ) : (
-       <Empty setSearch={setSearch}></Empty>
-      )}
+     <div>
+  {loading ? (
+    <Loading />
+  ) : packageData.length === 0 ? (
+    <Empty setSearch={setSearch} />
+  ) : tableView ? (
+    <TableView data={packageData} />
+  ) : (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {packageData.map((pkg) => (
+        <AllPackageCard key={pkg._id} allPackage={pkg} />
+      ))}
+    </div>
+  )}
+</div>
+
     </div>
   );
 };
