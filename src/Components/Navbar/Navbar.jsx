@@ -9,7 +9,7 @@ const Navbar = () => {
   const { user, logoutUser } = AuthInfo();
 
   const links = (
-    <ul className="space-x-4 lg:text-white menu menu-horizontal px-1">
+    <ul className="space-x-4 lg:text-white menu menu-horizontal ">
       <NavLink to="/">Home</NavLink>
       <NavLink to="/allPackage">All Packages</NavLink>
       {user && <NavLink to="/my-bookings">My Bookings</NavLink>}
@@ -20,8 +20,8 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-primary/90 shadow-sm px-4  sticky top-0 z-10">
-      <div className="navbar-start flex-1">
+    <div className="navbar bg-primary/90 shadow-sm px-4  sticky top-0 z-10 ">
+      <div className="navbar-start flex-1 mx-6">
         <div className="dropdown lg:hidden">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-sm">
             <svg
@@ -56,7 +56,7 @@ const Navbar = () => {
         {links}
       </div>
 
-      <div className="navbar-end flex-none flex items-center gap-2">
+      <div className="navbar-end flex-none flex items-center gap-2 mx-6">
         <ThemeToggle />
 
         {user ? (

@@ -13,9 +13,9 @@ const Home = () => {
     <div>
       <Banner></Banner>
       <div>
-        <h1 className="text-center font-bold text-4xl  text-accent mt-5">Our Featured Tours</h1>
+        <h1 className="text-center font-bold text-4xl  text-accent my-12">Our Featured Tours</h1>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-11/12 mx-auto gap-5">
         {allFeatured.map((featuredData) => (
           <Featured
             key={featuredData._id}

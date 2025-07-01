@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import { motion } from "framer-motion";
 const Banner = () => {
   return (
-    <div className=" max-h-[70vh]  ">
+    <div className="  ">
       <div className="flex lg: justify-around lg:items-center lg:flex-row md:flex-row md:items-center  flex-col-reverse  bg-accent rounded-md p-6 ">
         <motion.div
           initial="hidden"
@@ -23,7 +23,7 @@ const Banner = () => {
               hidden: { opacity: 0, y: 30 },
               visible: { opacity: 1, y: 0 },
             }}
-            className="text-5xl text-white font-extrabold"
+            className="text-7xl text-white font-extrabold"
           >
             Discover the World <br /> with Us
           </motion.h1>
@@ -53,7 +53,7 @@ const Banner = () => {
         </motion.div>
         <div>
           <motion.img
-            className="w-[550px]"
+            className="w-[450px]"
             src="https://i.ibb.co/V0vLjkZv/flyBan.png"
             alt="Banner"
             animate={{
