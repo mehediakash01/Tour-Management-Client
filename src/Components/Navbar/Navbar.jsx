@@ -20,7 +20,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-primary/90 shadow-sm px-4  sticky top-0 z-10 ">
+    <div className="navbar bg-primary/90 shadow-sm px-4  sticky top-0 z-50 ">
       <div className="navbar-start flex-1 mx-6">
         <div className="dropdown lg:hidden">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-sm">
