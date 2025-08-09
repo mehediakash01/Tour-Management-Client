@@ -19,7 +19,7 @@ const Service = () => {
         journey is seamless, unique, and truly unforgettable.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div className="card bg-accent/50 hover:scale-105 transition-transform duration-200 ease-in-out shadow-xl">
+        <div className="card  hover:scale-105 transition-transform duration-200 ease-in-out shadow-xl">
           <div className="card-body items-center  text-center">
             <FaGlobe className="text-5xl text-primary mb-4" />
             <h3 className="card-title">Custom Itinerary Design</h3>
@@ -29,7 +29,7 @@ const Service = () => {
             </p>
           </div>
         </div>
-        <div className="card bg-accent/50 hover:scale-105 transition-transform duration-200 ease-in-out shadow-xl">
+        <div className="card  hover:scale-105 transition-transform duration-200 ease-in-out shadow-xl">
           <div className="card-body items-center  text-center">
             <FaUsers className="text-5xl text-primary mb-4" />
             <h3 className="card-title">Guided Group Tours</h3>
@@ -39,7 +39,7 @@ const Service = () => {
             </p>
           </div>
         </div>
-        <div className="card bg-accent/50 hover:scale-105 transition-transform duration-200 ease-in-out shadow-xl">
+        <div className="card  hover:scale-105 transition-transform duration-200 ease-in-out shadow-xl">
           <div className="card-body items-center  text-center">
             <FaMapMarkerAlt className="text-5xl text-primary mb-4" />
             <h3 className="card-title">Adventure & Eco-Travel</h3>
@@ -49,7 +49,7 @@ const Service = () => {
             </p>
           </div>
         </div>
-        <div className="card bg-accent/50 hover:scale-105 transition-transform duration-200 ease-in-out shadow-xl">
+        <div className="card  hover:scale-105 transition-transform duration-200 ease-in-out shadow-xl">
           <div className="card-body items-center  text-center">
             <FaHandshake className="text-5xl text-primary  mb-4" />
             <h3 className="card-title">Corporate Travel Planning</h3>
@@ -59,7 +59,7 @@ const Service = () => {
             </p>
           </div>
         </div>
-        <div className="card bg-accent/50 hover:scale-105 transition-transform duration-200 ease-in-out shadow-xl">
+        <div className="card  hover:scale-105 transition-transform duration-200 ease-in-out shadow-xl">
           <div className="card-body items-center  text-center">
             <FaStar className="text-5xl text-primary mb-4" />
             <h3 className="card-title">Exclusive Local Experiences</h3>
@@ -69,7 +69,7 @@ const Service = () => {
             </p>
           </div>
         </div>
-        <div className="card bg-accent/50 hover:scale-105 transition-transform duration-200 ease-in-out shadow-xl">
+        <div className="card  hover:scale-105 transition-transform duration-200 ease-in-out shadow-xl">
           <div className="card-body items-center text-center">
             <FaHeadset className="text-5xl text-primary mb-4" />
             <h3 className="card-title">Flexible & Supported Plans</h3>
