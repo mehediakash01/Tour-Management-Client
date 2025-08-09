@@ -1,7 +1,7 @@
 import React from "react";
 import { HiOutlineCalendar } from "react-icons/hi";
 import { Link } from "react-router";
-
+import { motion } from "framer-motion";
 const Blog = () => {
   const blogs = [
     {
@@ -38,8 +38,10 @@ const Blog = () => {
   ];
 
   return (
-    <section className="py-16 bg-base-100">
-      <div className="max-w-7xl mx-auto text-center">
+    <motion.section  initial={{ opacity: 0, y: 50 }} // Start hidden and shifted down
+whileInView={{ opacity: 1, y: 0 }} // Fade in and move up when in view
+transition={{ duration: 0.8 }} className="py-16 bg-base-100">
+      <div className="w-11/12 mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-accent">From Our Blog</h2>
         <p className="text-base-content/70 mb-10">
           Tips, guides and stories from travel experts to make your journey smooth.
@@ -54,7 +56,7 @@ const Blog = () => {
               <img
                 src={blog.image}
                 alt={blog.title}
-                className="w-full h-48 object-cover"
+                className="w-full h-48 object-cover hover:scale-110 transition-transform ease-in-out duration-300"
               />
               <div className="p-5 text-left ">
                 <div className="flex items-center text-sm mb-2 text-black">
@@ -71,7 +73,7 @@ const Blog = () => {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

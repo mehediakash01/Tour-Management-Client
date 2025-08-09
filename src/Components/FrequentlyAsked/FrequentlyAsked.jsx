@@ -1,10 +1,19 @@
 import React from "react";
 import { MdEmojiPeople } from "react-icons/md";
+import { motion } from "framer-motion";
 const FrequentlyAsked = () => {
   return (
-    <div className="w-11/12 mx-auto my-12">
-       <h1 className="text-3xl lg:text-5xl font-bold text-accent flex items-center justify-center my-12"><MdEmojiPeople />What People Frequently Asked</h1>
-      <div className="flex lg:flex-row md:flex-row flex-col-reverse justify-around items-center my-8">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }} // Start hidden and shifted down
+      whileInView={{ opacity: 1, y: 0 }} // Fade in and move up when in view
+      transition={{ duration: 0.8 }}
+      className="w-11/12 mx-auto my-12"
+    >
+      <h1 className="text-3xl lg:text-5xl font-bold text-accent flex items-center justify-center my-12">
+        <MdEmojiPeople />
+        What People Frequently Asked
+      </h1>
+      <div className="flex lg:flex-row md:flex-row flex-col-reverse justify-between  items-center my-8">
         <div className="join join-vertical bg-base-100">
           <div className="collapse collapse-arrow join-item border-base-300 border">
             <input type="radio" name="my-accordion-4" defaultChecked />
@@ -59,7 +68,7 @@ const FrequentlyAsked = () => {
           </div>
         </div>
 
-        <div class="grid grid-cols-2 gap-4 w-fit">
+        <div class="grid grid-cols-2 gap-4 w-fit ">
           <img
             src="https://i.ibb.co/hJ1vyJxw/Debotakhum.jpg"
             alt="Forest 1"
@@ -85,7 +94,7 @@ const FrequentlyAsked = () => {
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

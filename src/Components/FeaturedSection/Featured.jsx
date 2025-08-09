@@ -15,9 +15,13 @@ const Featured = ({ featuredData }) => {
     package_details,
   } = featuredData;
 
-
   return (
-    <div className="card bg-base-100  shadow-sm ">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }} // Start hidden and shifted down
+      whileInView={{ opacity: 1, y: 0 }} // Fade in and move up when in view
+      transition={{ duration: 0.8 }}
+      className="card bg-base-100  shadow-sm "
+    >
       <figure className="relative">
         <motion.img
           whileHover={{ scale: 1.2 }}
@@ -26,7 +30,7 @@ const Featured = ({ featuredData }) => {
           className="h-48 w-full object-cover"
           alt="tourImage"
         />
-        <p className="font-semibold text-sm absolute bg-primary rounded-r-full p-1 text-white -mt-20 -ml-64">
+        <p className="font-semibold text-sm absolute bg-primary rounded-r-full p-1 text-white -mt-20 lg:-ml-64 -ml-[300px]">
           🗓{duration}
         </p>
         <h2 className=" absolute backdrop-blur-2xl -mb-40 py-2 w-full  text-white flex items-center justify-center gap-2 ">
@@ -50,7 +54,7 @@ const Featured = ({ featuredData }) => {
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

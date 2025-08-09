@@ -3,10 +3,9 @@ import { Link } from "react-router";
 import { motion } from "framer-motion";
 const Banner = () => {
   return (
-    <div className="relative  ">
-  <div className="absolute inset-0 bg-black/60 "></div>
-      <div className="min-h-[70vh] bg-[url('https://i.ibb.co.com/1GP8hvp7/bgBanner.jpg')] bg-cover bg-center  flex lg: justify-around lg:items-center lg:flex-row md:flex-row md:items-center  flex-col-reverse  bg-accent rounded-md p-6  ">
-      
+    <div className="relative min-h-[70vh] bg-[url('https://i.ibb.co.com/1GP8hvp7/bgBanner.jpg')] bg-cover bg-center ">
+      <div className="absolute inset-0 bg-black/60 "></div>
+      <div className=" w-11/12 mx-auto  flex lg: justify-between lg:items-center lg:flex-row md:flex-row md:items-center  flex-col-reverse   rounded-md p-6  ">
         <motion.div
           initial="hidden"
           animate="visible"
