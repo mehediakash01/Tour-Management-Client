@@ -7,7 +7,7 @@ import { IoGridOutline } from "react-icons/io5";
 import { FaTableCells } from "react-icons/fa6";
 import TableView from "./TableView";
 import useTitle from "../../Hooks/useTitle";
-
+import { TbPackages } from "react-icons/tb";
 const AllPackage = () => {
   const [search, setSearch] = useState("");
   const [packageData, setPackageData] = useState([]);
@@ -58,26 +58,26 @@ useTitle("All-Package");
 
   return (
     <div className="w-11/12 mx-auto my-12">
-      <h1 className="text-3xl text-accent font-bold text-center my-5">
-        Tour Packages
+      <h1 className="text-3xl lg:text-5xl text-accent font-bold  my-12 flex items-center justify-center">
+      <TbPackages />  Tour Packages
       </h1>
 
       {/* Controls */}
-      <div className="flex flex-col md:flex-row gap-4 items-center mb-6">
+      <div className="flex flex-col md:flex-row gap-4 items-center lg:justify-center mb-6">
         {/* Search */}
         <input
           type="text"
           placeholder="Search..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="input input-secondary w-full md:w-1/3"
+          className="input input-secondary  md:w-1/3 w-1/2  "
         />
 
         {/* Sort Dropdown */}
         <select
           value={sortOption}
           onChange={(e) => setSortOption(e.target.value)}
-          className="select select-secondary w-full md:w-1/4"
+          className="select select-secondary  md:w-1/3 w-1/2"
         >
           <option value="">Sort By</option>
           <option value="tour_name_asc">Name (A-Z)</option>
@@ -107,7 +107,7 @@ useTitle("All-Package");
         ) : tableView ? (
           <TableView data={packageData} />
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-11/12 mx-auto">
             {packageData.map((pkg) => (
               <AllPackageCard key={pkg._id} allPackage={pkg} />
             ))}

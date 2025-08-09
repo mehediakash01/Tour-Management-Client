@@ -14,7 +14,7 @@ const Featured = ({ featuredData }) => {
 
     package_details,
   } = featuredData;
-  console.log(featuredData);
+
 
   return (
     <div className="card bg-base-100  shadow-sm ">
