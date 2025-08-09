@@ -29,7 +29,7 @@ const AllPackageCard = ({ allPackage }) => {
           className="h-48 w-full object-cover"
           alt="tourImage"
         />
-        <p className="font-semibold text-sm absolute bg-primary rounded-r-full p-1 text-white -mt-20 lg:-ml-96 -ml-[225px] ">
+        <p className="font-semibold text-sm absolute bg-primary rounded-r-full p-1 text-white -mt-20 lg:-ml-[320px] -ml-[225px] ">
           🗓{duration}
         </p>
         <h2 className=" absolute backdrop-blur-2xl -mb-40 py-2 w-full  text-white flex items-center justify-center gap-2 ">

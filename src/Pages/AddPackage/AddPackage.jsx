@@ -58,7 +58,7 @@ useTitle("add-package")
       <form onSubmit={handleAddPackage} className="space-y-4">
         <div>
           <label className="label">
-            <span className="label-text">Tour Name</span>
+            <span className="text-black">Tour Name</span>
           </label>
           <input
             type="text"
@@ -70,7 +70,7 @@ useTitle("add-package")
 
         <div>
           <label className="label">
-            <span className="label-text">Image URL</span>
+            <span className="text-black">Image URL</span>
           </label>
           <input
             type="text"
@@ -82,7 +82,7 @@ useTitle("add-package")
 
         <div>
           <label className="label">
-            <span className="label-text">Duration</span>
+            <span className="text-black">Duration</span>
           </label>
           <input
             type="text"
@@ -95,7 +95,7 @@ useTitle("add-package")
 
         <div>
           <label className="label">
-            <span className="label-text">Departure Location</span>
+            <span className="text-black">Departure Location</span>
           </label>
           <input
             type="text"
@@ -107,7 +107,7 @@ useTitle("add-package")
 
         <div>
           <label className="label">
-            <span className="label-text">Destination</span>
+            <span className="text-black">Destination</span>
           </label>
           <input
             type="text"
@@ -119,7 +119,7 @@ useTitle("add-package")
 
         <div>
           <label className="label">
-            <span className="label-text">Price (Tk)</span>
+            <span className="text-black">Price (Tk)</span>
           </label>
           <input
             type="number"
@@ -131,7 +131,7 @@ useTitle("add-package")
 
         <div>
           <label className="label">
-            <span className="label-text">Departure Date</span>
+            <span className="text-black">Departure Date</span>
           </label>
           <input
             type="date"
@@ -143,7 +143,7 @@ useTitle("add-package")
 
         <div>
           <label className="label">
-            <span className="label-text">Package Details</span>
+            <span className="text-black">Package Details</span>
           </label>
           <textarea
             name="package_details"
@@ -156,7 +156,7 @@ useTitle("add-package")
 
         <div>
           <label className="label">
-            <span className="label-text">Guide Contact No.</span>
+            <span className="text-black">Guide Contact No.</span>
           </label>
           <input
             type="text"
@@ -169,7 +169,7 @@ useTitle("add-package")
 
         <div>
           <label className="label">
-            <span className="label-text">Guide Name</span>
+            <span className="text-black">Guide Name</span>
           </label>
           <input
             type="text"
@@ -182,7 +182,7 @@ useTitle("add-package")
 
         <div>
           <label className="label">
-            <span className="label-text">Guide Photo URL</span>
+            <span className="text-black">Guide Photo URL</span>
           </label>
           <input
             type="text"
@@ -195,7 +195,7 @@ useTitle("add-package")
 
         <div>
           <label className="label">
-            <span className="label-text">Guide Email</span>
+            <span className="text-black">Guide Email</span>
           </label>
           <input
             type="email"

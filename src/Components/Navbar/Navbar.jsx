@@ -3,7 +3,9 @@ import { Link, NavLink } from "react-router";
 import navLogo from "../../assets/navLogo.png";
 import AuthInfo from "../../Hooks/AuthInfo";
 import ThemeToggle from "../Theme/ThemeToggle";
-
+import { IoIosAddCircleOutline } from "react-icons/io";
+import { MdOutlineManageAccounts } from "react-icons/md";
+import { IoLogOutOutline } from "react-icons/io5";
 const Navbar = () => {
   const [isClicked, setIsClicked] = useState(false);
   const { user, logoutUser } = AuthInfo();
@@ -20,7 +22,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-primary/90 shadow-sm px-4  sticky top-0 z-50 ">
+    <div className="navbar bg-primary/90 shadow-sm lg:px-11  sticky top-0 z-50 ">
       <div className="navbar-start flex-1 mx-6">
         <div className="dropdown lg:hidden">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-sm">
@@ -71,21 +73,21 @@ const Navbar = () => {
               />
             </div>
             {isClicked && (
-              <div className="absolute right-0 mt-4 z-10 bg-accent p-3 rounded-md shadow flex flex-col gap-1">
+              <div className="absolute -ml-44 mt-4 z-10 bg-accent p-3 rounded-md shadow flex flex-col gap-1">
                 <Link
                   to="/add-package"
-                  className="text-white hover:bg-secondary px-2 py-1 rounded-md transition">
-                  Add Package
+                  className="text-white hover:bg-secondary px-2 py-1 rounded-md transition flex items-center gap-1">
+                <IoIosAddCircleOutline size={20} />  Add Package
                 </Link>
                 <Link
                   to="/managePackage"
-                  className="text-white hover:bg-secondary px-2 py-1 rounded-md transition">
-                  Manage My Packages
+                  className="text-white hover:bg-secondary px-2 py-1 rounded-md transition flex items-center gap-1">
+                 <MdOutlineManageAccounts size={20} /> Manage My Packages
                 </Link>
                 <button
                   onClick={() => logoutUser()}
-                  className="btn bg-secondary hover:bg-emerald-600 text-white border-none">
-                  Logout
+                  className="btn bg-secondary hover:bg-emerald-600 text-white border-none flex items-center">
+                  Logout <IoLogOutOutline />
                 </button>
               </div>
             )}

@@ -122,8 +122,8 @@ const PackageDetails = () => {
 
   return (
     <div className="w-11/12 mx-auto my-12">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="bg-accent p-4 rounded-xl shadow-md">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-12">
+        <div >
           <img
             src={image}
             className="rounded-xl w-full h-auto object-cover"
