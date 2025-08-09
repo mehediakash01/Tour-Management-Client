@@ -17,33 +17,34 @@ const AboutUs = () => {
   useTitle("About-us")
   return (
     <div className="">
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-10  items-center bg-accent p-8  shadow-md">
-        {/* Text Content */}
-        <div className="space-y-6">
-          <h1 className="text-white text-4xl lg:text-6xl md:text-5xl font-bold leading-tight">
-            Discover the World <br /> with Us
-          </h1>
-          <p className="text-white/80 text-lg leading-relaxed">
-            Passionately curating unique travel experiences that connect you <br />
-            with cultures and breathtaking destinations.
-          </p>
-          <Link to={"/allPackage"}>
-            <button className="btn btn-secondary text-white mt-4">
-              Explore Our Tours
-            </button>
-          </Link>
-        </div>
-
-        <div className="flex justify-center">
-          <img
-            src= {trip}
-            alt="Mountain Tour Illustration"
-            className="max-w-full h-auto"
-          />
+      <section className="     bg-accent">
+        <div className="flex flex-col-reverse lg:flex-row items-center p-8 w-11/12 mx-auto justify-between">
+          {/* Text Content */}
+          <div className="space-y-6">
+            <h1 className="text-white text-4xl lg:text-6xl md:text-5xl font-bold leading-tight">
+              Discover the World <br /> with Us
+            </h1>
+            <p className="text-white/80 text-lg leading-relaxed">
+              Passionately curating unique travel experiences that connect you <br />
+              with cultures and breathtaking destinations.
+            </p>
+            <Link to={"/allPackage"}>
+              <button className="btn btn-secondary text-white mt-4">
+                Explore Our Tours
+              </button>
+            </Link>
+          </div>
+          <div className="">
+            <img
+              src= {trip}
+              alt="Mountain Tour Illustration"
+              className="w-[450px]"
+            />
+          </div>
         </div>
       </section>
 
-      <section className="py-16 px-4 md:px-8 max-w-7xl mx-auto">
+      <section className="w-11/12 my-12 mx-auto">
         <h2 className="text-4xl font-bold text-center text-accent mb-12">Who We Are</h2>
         <div className="flex flex-col md:flex-row items-center md:space-x-12">
           <div className="md:w-1/2 mb-8 md:mb-0">
