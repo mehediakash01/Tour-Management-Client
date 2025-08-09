@@ -44,7 +44,7 @@ const Featured = ({ featuredData }) => {
         <div className="flex gap-3 ">
           <Link to={`/package/${_id}`}>
             <button className="btn btn-outline btn-secondary flex items-center">
-              view details <FaArrowRight />
+              view details  <FaArrowRight />
             </button>
           </Link>
           <p className="flex items-center bg-secondary hover:scale-110 transition-transform duration-300 text-white rounded-md justify-center gap-1">
