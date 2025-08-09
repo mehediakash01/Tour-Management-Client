@@ -12,7 +12,7 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router";
 import useTitle from "../../Hooks/useTitle";
-
+import trip from "../../assets/trip.png"
 const AboutUs = () => {
   useTitle("About-us")
   return (
@@ -36,7 +36,7 @@ const AboutUs = () => {
 
         <div className="flex justify-center">
           <img
-            src="https://i.ibb.co/YTwVJpqP/reshot-illustration-discover-mountain-tour-N9-YRKZS56-H.png"
+            src= {trip}
             alt="Mountain Tour Illustration"
             className="max-w-full h-auto"
           />
