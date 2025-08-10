@@ -36,6 +36,7 @@ const SocialButton = () => {
   <div className="divider">OR</div>
 
 </div>
+
       <button onClick={handleGoogle} className="btn btn-info w-full">
         {" "}
         <FcGoogle /> Continue with Google
