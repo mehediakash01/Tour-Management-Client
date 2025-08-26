@@ -2,7 +2,9 @@ import React from "react";
 import { HiOutlineCalendar } from "react-icons/hi";
 import { Link } from "react-router";
 import { motion } from "framer-motion";
+import useTitle from "../../Hooks/useTitle";
 const Blog = () => {
+  useTitle("Blog");
   const blogs = [
     {
       id: 1,
@@ -27,6 +29,16 @@ const Blog = () => {
     },
     {
       id: 3,
+      title: "Travel Checklist: What You Must Pack",
+      date: "April 10, 2025",
+      image:
+        "https://img.freepik.com/premium-photo/travel-summer-vacation-tourism-objects-concept_93675-121114.jpg?w=1380",
+      excerpt:
+        "Before you hit the road, make sure you're fully prepared with this essential travel checklist.",
+      blogLink: "https://www.travelchecklist.app/packing-checklist/",
+    },
+    {
+      id: 4,
       title: "Travel Checklist: What You Must Pack",
       date: "April 10, 2025",
       image:
