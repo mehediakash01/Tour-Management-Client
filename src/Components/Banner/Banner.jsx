@@ -52,14 +52,19 @@ const Banner = () => {
             </motion.button>
           </Link>
         </motion.div>
-        <div>
+        <motion.div 
+        initial={{opacity:0,x:-200}}
+        whileInView={{opacity:1,x:0}}
+        transition={{duration:0.6, ease:"easeIn"}}
+        viewport={{amount:3}}
+        >
           <img
             
             src="https://i.ibb.co.com/zTG78Dws/Tour-Hero-Img.webp"
             alt="Banner"
          
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );
