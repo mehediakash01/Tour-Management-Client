@@ -101,7 +101,7 @@ const Navbar = () => {
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 className="absolute inset-0 bg-gradient-to-r from-secondary to-accent rounded-full blur-md opacity-50"
               />
-              <div className="relative bg-white rounded-full p-2 shadow-lg">
+              <div className="relative bg-white rounded-full  shadow-lg">
           <img src={navLogo} className="w-16 h-16 mb-2" alt="Logo" />
               </div>
             </div>
