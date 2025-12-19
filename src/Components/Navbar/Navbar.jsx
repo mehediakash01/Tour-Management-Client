@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import useAuth from "../../Hooks/AuthInfo"
+import navLogo from "../../assets/navLogo.png";
 import { 
   IoLogOutOutline,
   IoClose,
@@ -101,7 +102,7 @@ const Navbar = () => {
                 className="absolute inset-0 bg-gradient-to-r from-secondary to-accent rounded-full blur-md opacity-50"
               />
               <div className="relative bg-white rounded-full p-2 shadow-lg">
-                <MdTravelExplore className="w-6 h-6 lg:w-8 lg:h-8 text-primary" />
+          <img src={navLogo} className="w-16 h-16 mb-2" alt="Logo" />
               </div>
             </div>
             <div>
