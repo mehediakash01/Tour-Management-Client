@@ -329,7 +329,7 @@ const Banner = () => {
               <div className="text-center space-y-4">
                 <FaPlay className="text-6xl text-primary mx-auto" />
                 <p className="text-xl font-semibold">Video Player Placeholder</p>
-                <p className="text-base-content/70">Add your promotional video here</p>
+                <p className="text-base-content/70"> promotional video will added soon</p>
               </div>
             </div>
             <div className="p-6 text-right">
